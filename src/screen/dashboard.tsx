@@ -13,21 +13,19 @@ import Navbar from '@/components/Navbar';
 export const Dashboard = () => {
   return (
     <Box>
-
-
       {/* LLama al componente Navbar */}
       <Navbar />
 
       <React.Fragment>
         <CssBaseline />
         <Container sx={{ mt: 15}}>
-          <Grid container spacing={{ xs: 2, md: 2 }} columns={{ xs: 4, sm: 0, md: 12 }} style={{ background: 'red' }}
+          <Grid container columnSpacing={{xs:2, md:2}} spacing={{ xs: 2, md: 2 }} columns={{ xs: 4, sm: 0, md: 12 }} style={{ background: 'red' }}
             direction="row"
             justifyContent="space-between"
             alignItems="center">
             {
               cardsInfo.map((card: { owner: any; title: any; image: any; like: any; view: any; ultimosAgregados: any }) => (
-                <div className="content-cards">
+                <Box className="content-cards" sx={{mb:3}}>
                   <CardComponent
                     title={card.title}
                     owner={card.owner}
@@ -36,7 +34,7 @@ export const Dashboard = () => {
                     view={card.view}
                     ultimosAgregados={card.ultimosAgregados}
                   />
-                </div>
+                </Box>
               ))
             }
 
