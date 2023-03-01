@@ -124,13 +124,14 @@ export const cardsInfo:any = [
         ultimosAgregados: false,
     },
     {
-        title: "Polaris App",
+        title: "E-learning App",
         owner: 'Vladimir Mendoza',
         image: 
             {
-                img01: '../../image/Polaris/polaris01.png',
-                img02: '../../image/Polaris/polaris02.png',
-                img03: '../../image/Polaris/polaris03.png',
+                img01: '../../image/E-learning/elearning01.png',
+                img02: '../../image/E-learning/elearning02.png',
+                img03: '../../image/E-learning/elearning03.png',
+
 
 
             },
@@ -150,7 +151,7 @@ export const cardsInfo:any = [
         ultimosAgregados: false,
     },
     {
-        title: "LoveLink App",
+        title: "Tabbar Microinteractions",
         owner: 'Vladimir Mendoza',
         image: 
             {

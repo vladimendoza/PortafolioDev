@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 // import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
+// import CardContent from '@mui/material/CardContent';
+// import CardMedia from '@mui/material/CardMedia';
 // import Typography from '@mui/material/Typography';
 // import { Box, Button, CardActionArea, CardActions } from '@mui/material';
 import Grid from '@mui/material/Grid'; // Grid version 1
@@ -9,17 +9,14 @@ import Icon from '@mui/material/Icon';
 import ThumbUpAltIcon from '@mui/icons-material/ThumbUpAlt';
 
 import AspectRatio from '@mui/joy/AspectRatio';
-import Avatar from '@mui/joy/Avatar';
 import Box from '@mui/joy/Box';
 import Card from '@mui/joy/Card';
 import CardCover from '@mui/joy/CardCover';
-import Chip from '@mui/joy/Chip';
+// import Chip from '@mui/joy/Chip';
 import IconButton from '@mui/joy/IconButton';
 import Typography from '@mui/joy/Typography';
 import Link from '@mui/joy/Link';
-import Favorite from '@mui/icons-material/Favorite';
 import Visibility from '@mui/icons-material/Visibility';
-import CreateNewFolder from '@mui/icons-material/CreateNewFolder';
 
 
 export default function CardComponent({ title, owner, img, like, view, ultimosAgregados }: any) {
@@ -76,14 +73,40 @@ export default function CardComponent({ title, owner, img, like, view, ultimosAg
 
       <Card
         sx={{
-          width: 570,
+          width: 680,
           bgcolor: 'initial',
           boxShadow: 'none',
           '--Card-padding': '0px',
+          borderColor: 'black'
         }}
       >
         <Box sx={{ position: 'relative' }}>
-          <AspectRatio ratio="4/5" sx={{ borderRadius: 40 }}>
+
+          <>
+
+          </>
+          {ultimosAgregados === true ?
+            <Box sx={{
+              background: '#74B9FF',
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              position: 'absolute',
+              zIndex: 1,
+              width: 70,
+              height: 30,
+              borderRadius: 100,
+              right: 30,
+              top: 25
+            }}>
+              <Typography sx={{ color: '#ffff' }} >New</Typography>
+            </Box>
+            :
+            ''
+          }
+
+
+          <AspectRatio ratio="4/5" sx={{ borderRadius: 45 }}>
             <figure>
               <img
                 src={img}
@@ -93,10 +116,11 @@ export default function CardComponent({ title, owner, img, like, view, ultimosAg
               />
             </figure>
           </AspectRatio>
+
           <CardCover
             className="gradient-cover"
             sx={{
-              borderRadius: 40,
+              borderRadius: 45,
               '&:hover, &:focus-within': {
                 opacity: 1,
               },
@@ -139,14 +163,14 @@ export default function CardComponent({ title, owner, img, like, view, ultimosAg
               </Box>
 
               <Box
-              sx={{
-                p: 4,
-                display: 'flex',
-                alignItems: 'center',
-                // gap: 1.5,
-                // flexGrow: 1,
-                alignSelf: 'flex-end',
-              }}
+                sx={{
+                  p: 4,
+                  display: 'flex',
+                  alignItems: 'center',
+                  // gap: 1.5,
+                  // flexGrow: 1,
+                  alignSelf: 'flex-end',
+                }}
               >
                 <IconButton size="sm" sx={{ ml: 'auto', color: 'white', mr: 1 }}>
                   {/* <CreateNewFolder /> */}
@@ -157,7 +181,7 @@ export default function CardComponent({ title, owner, img, like, view, ultimosAg
                 </IconButton>
                 <IconButton size="sm" sx={{ ml: 'auto', color: 'white' }}>
                   {/* <Favorite /> */}
-                  <Visibility sx={{ mr: 1 }}/>
+                  <Visibility sx={{ mr: 1 }} />
                   <Typography level="body2">
                     {view}
                   </Typography>
