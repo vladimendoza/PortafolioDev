@@ -58,9 +58,9 @@ export default function TabSet() {
 
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
         <Tabs  value={value} onChange={handleChange} aria-label="basic tabs example"  variant="fullWidth">
-          <Tab label="Sobre mí" {...a11yProps(0)} style={{textTransform: 'capitalize', fontSize: 18}} />
-          <Tab label="Servicios" {...a11yProps(1)} style={{textTransform: 'capitalize', fontSize: 18}}/>
-          <Tab label="Contáctame" {...a11yProps(2)} style={{textTransform: 'capitalize', fontSize: 18}}/>
+          <Tab label="Sobre mí" {...a11yProps(0)} style={{textTransform: 'capitalize', fontSize: 16}} />
+          <Tab label="Servicios" {...a11yProps(1)} style={{textTransform: 'capitalize', fontSize: 16}}/>
+          <Tab label="Contáctame" {...a11yProps(2)} style={{textTransform: 'capitalize', fontSize: 16}}/>
         </Tabs>
       </Box>
 
