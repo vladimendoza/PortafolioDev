@@ -54,7 +54,7 @@ export default function TabSet() {
   };
 
   return (
-    <Box sx={{ width: 550 }}>
+    <Box sx={{ width: 580 }}>
 
       <Box sx={{ borderBottom: 1, borderColor: 'divider', display: 'flex' }}>
         <Tabs  value={value} onChange={handleChange} centered aria-label="basic tabs example">
