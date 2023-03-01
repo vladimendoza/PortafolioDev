@@ -22,21 +22,21 @@ export default function Contactame() {
         </Typography>
         <TextField
           id="outlined-basic"
-          label="Email"
+          label="Correo Electronico"
           variant="outlined"
           maxRows={4}
-          style={{ width: '100%' }} />
+          style={{ width: '100%', marginBottom: '30px'}} />
 
         <TextField
           id="outlined-multiline-static"
-          label="Multiline"
+          label="Mensaje"
           multiline
           rows={4}
-          defaultValue="Default Value"
+          defaultValue="¿Cómo puedo ayudarte?"
           style={{ width: '100%' }} />
       </Box>
 
-      <Box mt={4} mb={5}>
+      <Box mt={4} mb={4}>
         <Typography variant="h3"  mb={2} fontSize={20} color={'#74B9FF'} fontWeight={500}>
           Elige los servicios que necesitas
         </Typography>

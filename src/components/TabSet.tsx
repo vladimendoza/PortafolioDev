@@ -31,7 +31,7 @@ function TabPanel(props: TabPanelProps) {
       {...other}
     >
       {value === index && (
-        <Box sx={{ p: 3 }}>
+        <Box sx={{ pr: 5, pl: 5, pt: 3, pb:3 }}>
           <Typography>{children}</Typography>
         </Box>
       )}
@@ -54,13 +54,13 @@ export default function TabSet() {
   };
 
   return (
-    <Box sx={{ width: 580 }}>
+    <Box sx={{ width: 600 }}>
 
-      <Box sx={{ borderBottom: 1, borderColor: 'divider', display: 'flex' }}>
-        <Tabs  value={value} onChange={handleChange} centered aria-label="basic tabs example">
-          <Tab label="Sobre mí" {...a11yProps(0)} />
-          <Tab label="Servicios" {...a11yProps(1)} />
-          <Tab label="Contáctame" {...a11yProps(2)} />
+      <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+        <Tabs  value={value} onChange={handleChange} aria-label="basic tabs example"  variant="fullWidth">
+          <Tab label="Sobre mí" {...a11yProps(0)} style={{textTransform: 'capitalize', fontSize: 18}} />
+          <Tab label="Servicios" {...a11yProps(1)} style={{textTransform: 'capitalize', fontSize: 18}}/>
+          <Tab label="Contáctame" {...a11yProps(2)} style={{textTransform: 'capitalize', fontSize: 18}}/>
         </Tabs>
       </Box>
 
@@ -77,7 +77,6 @@ export default function TabSet() {
       </TabPanel>
 
       <Box>
-
         <div style={{
           width: '100%',
           height: 35,
