@@ -22,7 +22,7 @@ export const Dashboard = () => {
 
       <React.Fragment>
         <CssBaseline />
-        <Container>
+        <Container sx={{ mt: 15}}>
           <Grid container spacing={{ xs: 2, md: 2 }} columns={{ xs: 4, sm: 8, md: 12 }} style={{ background: 'red' }}
             direction="row"
             justifyContent="space-between"
