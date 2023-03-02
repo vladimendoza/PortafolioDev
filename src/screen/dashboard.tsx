@@ -31,7 +31,7 @@ export const Dashboard = () => {
                   <CardComponent
                     title={card.title}
                     owner={card.owner}
-                    img={card.image.img01}
+                    image={card.image}
                     like={card.like}
                     view={card.view}
                     ultimosAgregados={card.ultimosAgregados}
