@@ -1,16 +1,93 @@
+.selected-item {
+  text-align: center;
+}
+
+.controlsContainer {
+  --highlight-width: auto;
+  --highlight-x-pos: 0;
+  display: flex;
+  margin: 100px 0 25px;
+}
+
+.controls {
+  display: inline-flex;
+  justify-content: space-between;
+  background: white;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  border-radius: 100px;
+  max-width: 500px;
+  padding: 12px;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+}
+
+.controls input {
+  opacity: 0;
+  margin: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  cursor: pointer;
+  height: 100%;
+}
+
+.segment {
+  /* width: 100%; uncomment for each segment to have matching width */
+  min-width: 120px;
+  position: relative;
+  text-align: center;
+  z-index: 1;
+  color: #A6A6A6;
+}
+
+
+.segment label {
+  cursor: pointer;
+  display: block;
+  font-weight: 700;
+  padding: 10px;
+  transition: color 0.5s ease;
+}
+
+.segment.active label {
+  color: #fff;
+}
+
+.controls::before {
+  content: '';
+  background: #74B9FF;
+  border-radius: 100px;
+  width: var(--highlight-width);
+  transform: translateX(var(--highlight-x-pos));
+  position: absolute;
+  top: 8px;
+  bottom: 8px;
+  left: 0;
+  z-index: 0;
+}
+
+/* Only allow transitions once component is ready */
+.controls.ready::before {
+  transition: transform 0.3s ease, width 0.3s ease;
+}
 
 .filterCards {
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-    display: flex;
-    justify-content: center;
+  position: fixed;
+  z-index: 99999;
+  width: 100%;
+  bottom: 0;
+  /* display: flex; */
+  /* justify-content: center; */
 }
 
-.contentFilter {
-    width: 400px;
-    text-align: center;
-    z-index: 999;
-    background-color: black;
-    color: white;
-}
+/* .contentFilter { */
+/* width: 400px; */
+/* text-align: center; */
+/* z-index: 999; */
+/* background-color: black; */
+/* color: white; */
+/* } */

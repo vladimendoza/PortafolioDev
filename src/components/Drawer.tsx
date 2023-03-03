@@ -31,6 +31,7 @@ export default function DrawerComponent() {
                     anchor={'right'}
                     open={state['right']}
                     onClose={toggleDrawer('right', false)}
+                    style={{zIndex:99999}}
                 >
                     <TabSet />
                 </Drawer>

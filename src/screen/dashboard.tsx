@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import Image from 'next/image'
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
@@ -12,13 +12,14 @@ import { FilterCards } from '@/components/Filter';
 
 
 export const Dashboard = () => {
+  const [selectedValue1, setSelectedValue1] = useState("complete");
   return (
     <Box>
 
       <React.Fragment>
         <CssBaseline />
         <Container sx={{ mt: 15 }} maxWidth={'xl'} >
-          
+
           {/* LLama al componente Navbar */}
           <Navbar />
 
@@ -43,7 +44,30 @@ export const Dashboard = () => {
           </Grid>
         </Container>
       </React.Fragment>
-      <FilterCards />
+      <FilterCards
+        name="group-1"
+        callback={(val: any) => setSelectedValue1(val)}
+        controlRef={useRef()}
+        segments={[
+          {
+            label: "Todos",
+            value: "Todos",
+            ref: useRef()
+          },
+          {
+            label: "Agregados Recientemente",
+            value: "Agregados Recientemente",
+            ref: useRef()
+          },
+          {
+            label: "Más vistos",
+            value: "Más vistos",
+            ref: useRef()
+          }
+        ]}
+      />
+      {/* <p className="selected-item">Selected: {selectedValue1}</p> */}
+
     </Box>
   )
 }
