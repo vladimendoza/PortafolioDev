@@ -1,0 +1,16 @@
+
+.filterCards {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.contentFilter {
+    width: 400px;
+    text-align: center;
+    z-index: 999;
+    background-color: black;
+    color: white;
+}

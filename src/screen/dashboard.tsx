@@ -7,6 +7,7 @@ import CardComponent from '@/components/Card';
 import { cardsInfo } from '@/utils/cardsInfo';
 import Grid from '@mui/material/Grid'; // Grid version 1
 import Navbar from '@/components/Navbar';
+import { FilterCards } from '@/components/Filter';
 
 
 
@@ -39,10 +40,10 @@ export const Dashboard = () => {
                 </Box>
               ))
             }
-
           </Grid>
         </Container>
       </React.Fragment>
+      <FilterCards />
     </Box>
   )
 }
