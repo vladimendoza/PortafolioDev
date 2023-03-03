@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 // import Card from '@mui/material/Card';
 // import CardContent from '@mui/material/CardContent';
 // import CardMedia from '@mui/material/CardMedia';
@@ -17,9 +17,16 @@ import IconButton from '@mui/joy/IconButton';
 import Typography from '@mui/joy/Typography';
 import Link from '@mui/joy/Link';
 import Visibility from '@mui/icons-material/Visibility';
+import { Button } from '@mui/joy';
+import Modaldetails from './Modaldetails';
 
 
-export default function CardComponent({ title, owner, img, like, view, ultimosAgregados }: any) {
+export default function CardComponent({ title, owner, image, like, view, ultimosAgregados }: any) {
+
+  const [open, setOpen] = useState('');
+  // const [images, setImages] = useState([]);
+  
+
 
   return (
 
@@ -70,7 +77,21 @@ export default function CardComponent({ title, owner, img, like, view, ultimosAg
         </CardActionArea>
       </Card> */}
 
-
+      {
+        open === 'fullscreen' ?
+          <Modaldetails 
+          openmodal={open} 
+          onPress={(value:any) => setOpen(value)}
+          title={title}
+          owner={owner}
+          image={image}
+          like={like}
+          view={view}
+          ultimosAgregados={ultimosAgregados}
+          />
+          :
+          null
+      }
       <Card
         sx={{
           width: 680,
@@ -79,12 +100,13 @@ export default function CardComponent({ title, owner, img, like, view, ultimosAg
           '--Card-padding': '0px',
           borderColor: 'black'
         }}
+        onClick={() => { setOpen('fullscreen') }}
       >
-        <Box sx={{ position: 'relative' }}>
+        {/* <Modaldetails /> */}
 
-          <>
-
-          </>
+        {/* <Modaldetails /> */}
+        {/* <Modaldetails /> */}
+        <Box sx={{ position: 'relative' }} >
           {ultimosAgregados === true ?
             <Box sx={{
               background: '#74B9FF',
@@ -102,15 +124,13 @@ export default function CardComponent({ title, owner, img, like, view, ultimosAg
               <Typography sx={{ color: '#ffff' }} >New</Typography>
             </Box>
             :
-            ''
+            null
           }
-
-
           <AspectRatio ratio="4/5" sx={{ borderRadius: 45 }}>
             <figure>
               <img
-                src={img}
-                srcSet={img}
+                src={image.img01}
+                srcSet={image.img01}
                 loading="lazy"
                 alt={title}
               />
@@ -144,7 +164,7 @@ export default function CardComponent({ title, owner, img, like, view, ultimosAg
               >
                 <Typography level="h2" noWrap sx={{ fontSize: 'lg' }}>
                   <Link
-                    href="#dribbble-shot"
+                    href="#byvladimir"
                     overlay
                     underline="none"
                     sx={{

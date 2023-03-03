@@ -6,7 +6,7 @@ export const cardsInfo:any = [
             {
                 img01: '../../image/Polaris/polaris01.png',
                 img02: '../../image/Polaris/polaris02.png',
-                img03: '../../image/Polaris/polaris01.png',
+                img03: '../../image/Polaris/polaris03.png',
             }
         ,
         like: 150,
