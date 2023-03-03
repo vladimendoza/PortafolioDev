@@ -8,11 +8,20 @@ import { AspectRatio } from '@mui/joy';
 
 export default function Modaldetails({ openmodal, onPress, title, owner, image, like, view, ultimosAgregados }: any) {
   const [open, setOpen] = useState(openmodal);
-  // const [images, setImages] = useState([]);
-  // setImages(image)
+  const [images, setImages] = useState('');
 
+  useEffect(() => {
+    imagesItem()
+}, []);
 
-  // console.log('aqui van las imagens:', image);
+  function imagesItem() {
+    Object.keys(image).map(key => {
+      const value = image[key]
+      // setImages(value)
+      console.log('aqui van las imagens:', value);
+    })
+    // console.log('aqui van las imagenes desde otra funcion:', images);
+  }
 
 
   return (
@@ -21,6 +30,8 @@ export default function Modaldetails({ openmodal, onPress, title, owner, image, 
         setOpen('')
         onPress('')
       }}
+        sx={{ zIndex: 99999 }}
+
       >
         <ModalDialog
           aria-labelledby="layout-modal-title"
@@ -35,13 +46,14 @@ export default function Modaldetails({ openmodal, onPress, title, owner, image, 
             {owner}
           </Typography>
 
-          <Box sx={{ width: '100%', height: '100vh', background: 'none' }} sx={{
+          <Box sx={{
+            width: 'auto', height: '100vh', background: 'none',
             overflow: scroll ? 'scroll' : 'initial',
             mx: 'calc(-1 * var(--ModalDialog-padding))',
             px: 'var(--ModalDialog-padding)',
           }}>
             <Box className="content-cards" sx={{ mb: 3.5, borderColor: 'red' }}>
-              {
+              {/* {
                 image.map(({ img01 }: any) => (
                   <AspectRatio sx={{ borderRadius: 45 }}>
                     <figure>
@@ -54,7 +66,18 @@ export default function Modaldetails({ openmodal, onPress, title, owner, image, 
                     </figure>
                   </AspectRatio>
                 ))
-              }
+              } */}
+              {/* <AspectRatio sx={{ borderRadius: 45 }}>
+                <figure>
+                  <img
+                    src={images}
+                    srcSet={images}
+                    loading="lazy"
+                    alt={title}
+                  />
+                </figure>
+              </AspectRatio> */}
+
             </Box>
           </Box>
         </ModalDialog>

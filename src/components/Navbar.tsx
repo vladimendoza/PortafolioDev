@@ -31,7 +31,7 @@ export default function Navbar(props?: any) {
     return (
         <Box sx={{ display: 'flex'}}>
             <HideOnScroll {...props}>
-                <AppBar component="nav" sx={{ background: 'white', boxShadow: '0 0 5px rgba(0, 0, 0, 0.2)' }}>
+                <AppBar component="nav" sx={{ background: 'white', boxShadow: '0 0 5px rgba(0, 0, 0, 0.1)' }}>
                     <Toolbar sx={{ justifyContent: 'space-between', borderBottom: 1, borderColor: 'divider' }}>
                          <Image src={ByVladimir} width={150} height={0} alt={'Logo By Vladimir'}/>
                         <DrawerComponent />

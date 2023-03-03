@@ -25,7 +25,7 @@ export default function DrawerComponent() {
 
             <React.Fragment>
                 <Button onClick={toggleDrawer('right', true)}>
-                    <MenuIcon />
+                    <MenuIcon fontSize="large" sx={{color: '#2D3436'}}/>
                 </Button>
                 <Drawer
                     anchor={'right'}

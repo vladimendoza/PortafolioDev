@@ -4,9 +4,12 @@
     width: 100%;
     height: 100vh;
     background-repeat: no-repeat, repeat;
-    background-position: center; /* Center the image */
-    background-repeat: no-repeat; /* Do not repeat the image */
-    background-size: cover; /* Resize the background image to cover the entire container */
+    background-position: center;
+    /* Center the image */
+    background-repeat: no-repeat;
+    /* Do not repeat the image */
+    background-size: cover;
+    /* Resize the background image to cover the entire container */
     background-image: url("https://trabajarporelmundo.org/wp-content/uploads/2015/08/trabajo-dise%C3%B1adores-en-todo-el-mundo.jpg");
 }
 
@@ -20,7 +23,7 @@
 
 .m0 {
     margin: 0;
-  }
+}
 
 .pointer {
     cursor: pointer;

@@ -31,7 +31,7 @@ function TabPanel(props: TabPanelProps) {
       {...other}
     >
       {value === index && (
-        <Box sx={{ pr: 5, pl: 5, pt: 3, pb:3 }}>
+        <Box sx={{ pr: 5, pl: 5, pt: 3, pb: 3 }}>
           <Typography>{children}</Typography>
         </Box>
       )}
@@ -57,10 +57,10 @@ export default function TabSet() {
     <Box sx={{ width: 600 }}>
 
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-        <Tabs  value={value} onChange={handleChange} aria-label="basic tabs example"  variant="fullWidth">
-          <Tab label="Sobre mí" {...a11yProps(0)} style={{textTransform: 'capitalize', fontSize: 16}} />
-          <Tab label="Servicios" {...a11yProps(1)} style={{textTransform: 'capitalize', fontSize: 16}}/>
-          <Tab label="Contáctame" {...a11yProps(2)} style={{textTransform: 'capitalize', fontSize: 16}}/>
+        <Tabs  value={value} onChange={handleChange} aria-label="basic tabs example" variant="fullWidth">
+          <Tab label="Sobre mí" {...a11yProps(0)} style={{ textTransform: 'capitalize', fontSize: 16 }} />
+          <Tab label="Servicios" {...a11yProps(1)} style={{ textTransform: 'capitalize', fontSize: 16 }} />
+          <Tab label="Contáctame" {...a11yProps(2)} style={{ textTransform: 'capitalize', fontSize: 16 }} />
         </Tabs>
       </Box>
 
@@ -90,12 +90,12 @@ export default function TabSet() {
           // borderTop: '1px solid red'
         }}>
           <Box sx={{ width: '100%', display: 'flex', justifyContent: 'space-around' }}>
-            <LinkedInIcon style={{color: '#A6A6A6'}}/>
-            <InstagramIcon style={{color: '#A6A6A6'}}/>
-            <TwitterIcon style={{color: '#A6A6A6'}}/>
-            <FacebookIcon style={{color: '#A6A6A6'}}/>
-            <YouTubeIcon style={{color: '#A6A6A6'}}/>
-            <PinterestIcon style={{color: '#A6A6A6'}}/>
+            <LinkedInIcon style={{ color: '#A6A6A6' }} />
+            <InstagramIcon style={{ color: '#A6A6A6' }} />
+            <TwitterIcon style={{ color: '#A6A6A6' }} />
+            <FacebookIcon style={{ color: '#A6A6A6' }} />
+            <YouTubeIcon style={{ color: '#A6A6A6' }} />
+            <PinterestIcon style={{ color: '#A6A6A6' }} />
           </Box>
         </div>
       </Box>
