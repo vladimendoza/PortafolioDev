@@ -102,10 +102,6 @@ export default function CardComponent({ title, owner, image, like, view, ultimos
         }}
         onClick={() => { setOpen('fullscreen') }}
       >
-        {/* <Modaldetails /> */}
-
-        {/* <Modaldetails /> */}
-        {/* <Modaldetails /> */}
         <Box sx={{ position: 'relative' }} >
           {ultimosAgregados === true ?
             <Box sx={{
@@ -121,7 +117,7 @@ export default function CardComponent({ title, owner, image, like, view, ultimos
               right: 30,
               top: 25
             }}>
-              <Typography sx={{ color: '#ffff' }} >New</Typography>
+              <Typography sx={{ color: '#ffff' }}>Nuevo</Typography>
             </Box>
             :
             null
@@ -164,7 +160,7 @@ export default function CardComponent({ title, owner, image, like, view, ultimos
               >
                 <Typography level="h2" noWrap sx={{ fontSize: 'lg' }}>
                   <Link
-                    href="#byvladimir"
+                    href={`#${title}`}
                     overlay
                     underline="none"
                     sx={{
