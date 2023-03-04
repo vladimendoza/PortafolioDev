@@ -8,6 +8,7 @@ import { cardsInfo } from '@/utils/cardsInfo';
 import Grid from '@mui/material/Grid'; // Grid version 1
 import Navbar from '@/components/Navbar';
 import { FilterCards } from '@/components/Filter';
+import Footer from '@/components/Footer';
 
 
 
@@ -67,7 +68,7 @@ export const Dashboard = () => {
         ]}
       />
       {/* <p className="selected-item">Selected: {selectedValue1}</p> */}
-
+      <Footer />
     </Box>
   )
 }

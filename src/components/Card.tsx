@@ -32,51 +32,6 @@ export default function CardComponent({ title, owner, image, like, view, ultimos
 
     <Box>
 
-      {/* <Card sx={{ maxWidth: 570 }}>
-        <CardActionArea>
-          <CardMedia
-            component="img"
-            height="570"
-            width="500"
-            image={img}
-            alt={title}
-          />
-          <CardContent>
-  
-            <Grid container justifyContent="space-between">
-  
-              <Grid md={6}>
-                <Typography gutterBottom variant="h5" component="div" style={{ color: 'red' }}>
-                  {title}
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  {owner}
-                </Typography>
-              </Grid>
-  
-              <Grid container md={6}>
-                <Grid md={6} style={{display: 'flex', alignItems: 'center', flex: 1}}>
-                  <ThumbUpAltIcon />
-                  <Typography variant="body2" color="text.secondary">
-                    {like}
-                  </Typography>
-                </Grid>
-  
-                <Grid md={6} style={{display: 'flex', alignItems: 'center', justifyContent: 'end'}}>
-                  <ThumbUpAltIcon />
-                  <Typography variant="body2" color="text.secondary">
-                    {view}
-                  </Typography>
-                </Grid>
-  
-              </Grid>
-  
-            </Grid>
-          </CardContent>
-  
-        </CardActionArea>
-      </Card> */}
-
       {
         open === 'fullscreen' ?
           <Modaldetails 
