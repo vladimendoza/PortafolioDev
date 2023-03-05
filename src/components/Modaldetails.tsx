@@ -8,20 +8,17 @@ import { AspectRatio } from '@mui/joy';
 
 export default function Modaldetails({ openmodal, onPress, title, owner, image, like, view, ultimosAgregados }: any) {
   const [open, setOpen] = useState(openmodal);
-  const [images, setImages] = useState('');
+  const [data, setData] = useState<any>([])
 
   useEffect(() => {
-    imagesItem()
-}, []);
-
-  function imagesItem() {
-    Object.keys(image).map(key => {
-      const value = image[key]
-      // setImages(value)
-      console.log('aqui van las imagens:', value);
-    })
-    // console.log('aqui van las imagenes desde otra funcion:', images);
+    const array = []
+    for (var key in image) {
+      const item = image[key];
+      array.push(item)
   }
+  setData(array)
+   
+}, [image]);
 
 
   return (
@@ -53,20 +50,20 @@ export default function Modaldetails({ openmodal, onPress, title, owner, image, 
             px: 'var(--ModalDialog-padding)',
           }}>
             <Box className="content-cards" sx={{ mb: 3.5, borderColor: 'red' }}>
-              {/* {
-                image.map(({ img01 }: any) => (
-                  <AspectRatio sx={{ borderRadius: 45 }}>
+              {
+                data.map((e: any) => (
+                  <AspectRatio key={e} sx={{ borderRadius: 45 }}>
                     <figure>
                       <img
-                        src={img01}
-                        srcSet={img01}
+                        src={e}
+                        srcSet={e}
                         loading="lazy"
                         alt={title}
                       />
                     </figure>
                   </AspectRatio>
                 ))
-              } */}
+              }
               {/* <AspectRatio sx={{ borderRadius: 45 }}>
                 <figure>
                   <img
