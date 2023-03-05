@@ -93,8 +93,7 @@ export default function TabSet() {
             <LinkedInIcon style={{ color: '#A6A6A6' }} />
             <InstagramIcon style={{ color: '#A6A6A6' }} />
             <TwitterIcon style={{ color: '#A6A6A6' }} />
-            <FacebookIcon style={{ color: '#A6A6A6' }} />
-            <YouTubeIcon style={{ color: '#A6A6A6' }} />
+           
             <PinterestIcon style={{ color: '#A6A6A6' }} />
           </Box>
         </div>

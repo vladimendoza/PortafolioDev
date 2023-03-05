@@ -15,6 +15,7 @@ export const FilterCards = ({ name, segments, callback, defaultIndex = 0, contro
     useEffect(() => {
         // componentReady.current = true;
         componentReady.current;
+        
     }, []);
 
     useEffect(() => {
@@ -31,6 +32,7 @@ export const FilterCards = ({ name, segments, callback, defaultIndex = 0, contro
         callback(value, index);
 
     };
+    console.log('seleccionado:', componentReady.current);
 
     return (
         <div className={styles.filterCards}>
