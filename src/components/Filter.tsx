@@ -4,7 +4,7 @@ import styles from '../styles/filter.module.css'
 
 
 
-export const FilterCards = ({ name, segments, callback, defaultIndex = 0, controlRef }: any) => {
+export const FilterCards = ({ name, segments, callback, defaultIndex = 0, controlRef, handleCards }: any) => {
 
     const [activeIndex, setActiveIndex] = useState(defaultIndex);
     const componentReady = useRef();
@@ -15,21 +15,23 @@ export const FilterCards = ({ name, segments, callback, defaultIndex = 0, contro
     useEffect(() => {
         // componentReady.current = true;
         componentReady.current;
-    }, []);
+       
+    }, [componentReady]);
+   
 
     useEffect(() => {
         const activeSegmentRef = segments[activeIndex].ref;
         const { offsetWidth, offsetLeft } = activeSegmentRef.current;
         const { style } = controlRef.current;
-
+    
         style.setProperty("--highlight-width", `${offsetWidth}px`);
         style.setProperty("--highlight-x-pos", `${offsetLeft}px`);
     }, [activeIndex, callback, controlRef, segments]);
 
     const onInputChange = (value: any, index: any) => {
         setActiveIndex(index);
+        handleCards(value)
         callback(value, index);
-
     };
 
     return (

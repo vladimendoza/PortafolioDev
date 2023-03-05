@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef, useState, useEffect } from 'react'
 import Image from 'next/image'
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
@@ -14,6 +14,27 @@ import Footer from '@/components/Footer';
 
 export const Dashboard = () => {
   const [selectedValue1, setSelectedValue1] = useState("complete");
+  const [data, setData] = useState([])
+
+  const handleCards = (e: any) => {
+    if (e === 'Agregados Recientemente') {
+      const result  = cardsInfo.filter((e: any) => {
+        return e.ultimosAgregados === true
+      })
+      setData(result)
+    } else if (e === 'Más vistos') {
+      const result  = cardsInfo.filter((e: any) => {
+        return e.view > 1000
+      })
+      setData(result)
+    } else {
+      setData(cardsInfo)
+    }
+  }
+  useEffect(() => {
+    setData(cardsInfo)
+  }, [])
+  
   return (
     <Box>
 
@@ -29,8 +50,8 @@ export const Dashboard = () => {
             justifyContent="space-between"
             alignItems="center">
             {
-              cardsInfo.map((card: { owner: any; title: any; image: any; like: any; view: any; ultimosAgregados: any }) => (
-                <Box className="content-cards" sx={{ mb: 3.5, borderColor: 'red' }}>
+              data.map((card: { owner: any; title: any; image: any; like: any; view: any; ultimosAgregados: any }) => (
+                <Box key={card.title} className="content-cards" sx={{ mb: 3.5, borderColor: 'red' }}>
                   <CardComponent
                     title={card.title}
                     owner={card.owner}
@@ -49,6 +70,7 @@ export const Dashboard = () => {
         name="group-1"
         callback={(val: any) => setSelectedValue1(val)}
         controlRef={useRef()}
+        handleCards={handleCards}
         segments={[
           {
             label: "Todos",
