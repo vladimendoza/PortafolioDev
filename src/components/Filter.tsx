@@ -10,11 +10,10 @@ export const FilterCards = ({ name, segments, callback, defaultIndex = 0, contro
     const componentReady = useRef();
 
 
-    // Determine when the component is "ready"
+    //Determina cuando el componente esta listo
     useEffect(() => {
         componentReady.current;
     }, [componentReady]);
-   
 
     useEffect(() => {
         const activeSegmentRef = segments[activeIndex].ref;
@@ -34,7 +33,6 @@ export const FilterCards = ({ name, segments, callback, defaultIndex = 0, contro
 
     return (
         <div className={styles.filterCards}>
-
             <div className={styles.controlsContainer} ref={controlRef}>
                 <div className={`${styles.controls} ${componentReady.current ? `${styles.ready}` : "idle"}`}>
                     {segments?.map((item: any, i: any) => (

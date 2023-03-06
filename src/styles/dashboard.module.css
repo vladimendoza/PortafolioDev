@@ -47,3 +47,7 @@
 .css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root {
     border-radius: "50px";
 }
+
+.css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root.Mui-checked {
+    color: '#74B9FF',
+}

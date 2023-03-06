@@ -12,6 +12,7 @@ import Visibility from '@mui/icons-material/Visibility';
 import Modaldetails from './Modaldetails';
 
 
+// Interface para definir los tipo de datos
 interface propsCards {
   title?: string,
   owner?: string,
@@ -24,7 +25,8 @@ interface propsCards {
   aspectRadio?: string
   spaceColum?: number,
   fontOwner?: string,
-  fontTitle?: string
+  fontTitle?: string,
+  componentName?: string
 }
 
 export default function CardComponent({
@@ -39,15 +41,14 @@ export default function CardComponent({
   aspectRadio,
   spaceColum,
   fontOwner,
-  fontTitle }: propsCards) {
+  fontTitle,
+  componentName }: propsCards) {
 
 
   const [open, setOpen] = useState('');
   return (
 
     <Box>
-
-
       {
         open === 'fullscreen' ?
           <Modaldetails
@@ -66,7 +67,7 @@ export default function CardComponent({
       }
       <Card
         sx={{
-          width: { width },
+          width: componentName === 'Modal' ? width : null,
           bgcolor: 'initial',
           boxShadow: 'none',
           '--Card-padding': '0px',

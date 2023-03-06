@@ -24,6 +24,7 @@ export default function DrawerComponent() {
         <div>
 
             <React.Fragment>
+                {/* Boton encargado de de abrir el Drawer */}
                 <Button onClick={toggleDrawer('right', true)}>
                     <MenuIcon fontSize="large" sx={{color: '#2D3436'}}/>
                 </Button>

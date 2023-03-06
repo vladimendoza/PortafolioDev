@@ -1,4 +1,5 @@
 import moment from 'moment';
+// Objeto que simula un archivo Json de una DB
 export const cardsInfo:any = [
     {
         title: "Polaris Dashboard",

@@ -57,14 +57,16 @@ export default function TabSet() {
     <Box sx={{ width: 600 }}>
 
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-        <Tabs value={value} onChange={handleChange} aria-label="basic tabs example" variant="fullWidth">
-          <Tab label="Sobre mí" {...a11yProps(0)} style={{ textTransform: 'capitalize', fontSize: 16 }} />
-          <Tab label="Servicios" {...a11yProps(1)} style={{ textTransform: 'capitalize', fontSize: 16 }} />
-          <Tab label="Contáctame" {...a11yProps(2)} style={{ textTransform: 'capitalize', fontSize: 16 }} />
+        <Tabs value={value} onChange={handleChange} variant="fullWidth">
+          <Tab  sx={{ '&.Mui-selected': { color: '#2D3436' }, '&.Mui-focusVisible': { backgroundColor: '#2D3436' }, '&.MuiTabs-indicator': {backgroundColor: '#2D3436'} }}
+            label="Sobre mí" {...a11yProps(0)} style={{ textTransform: 'capitalize', fontSize: 16 }} />
+          <Tab sx={{ '&.Mui-selected': { color: '#2D3436' }, '&.Mui-focusVisible': { backgroundColor: '#2D3436' }, '&.MuiTabs-indicator': {backgroundColor: '#2D3436'} }} label="Servicios" {...a11yProps(1)} style={{ textTransform: 'capitalize', fontSize: 16 }} />
+          <Tab sx={{ '&.Mui-selected': { color: '#2D3436' }, '&.Mui-focusVisible': { backgroundColor: '#2D3436' }, '&.MuiTabs-indicator': {backgroundColor: '#2D3436'} }} label="Contáctame" {...a11yProps(2)} style={{ textTransform: 'capitalize', fontSize: 16 }} />
         </Tabs>
       </Box>
 
-      <Box sx={{overflow: 'scroll'}}>
+      {/* Se renderizan las secciones dentro del Drawer */}
+      <Box sx={{ overflow: 'scroll', marginBottom: 5 }}>
         <TabPanel value={value} index={0}>
           <Aboutme />
         </TabPanel>

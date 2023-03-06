@@ -7,7 +7,6 @@ import Typography from '@mui/joy/Typography';
 import { Box } from '@mui/material';
 import { AspectRatio, IconButton } from '@mui/joy';
 import 'moment/locale/es';
-import Link from '@mui/joy/Link';
 import Visibility from '@mui/icons-material/Visibility';
 import ThumbUpAltIcon from '@mui/icons-material/ThumbUpAlt';
 import { cardsInfo } from '@/utils/cardsInfo';
@@ -20,7 +19,7 @@ export default function Modaldetails({ openmodal, onPress, title, owner, image, 
   const [data, setData] = useState<any>([])
   const [toggler, setToggler] = useState(false);
 
-
+  // Mapea el objeto de imagen
   useEffect(() => {
     const array = []
     for (var key in image) {
@@ -34,9 +33,7 @@ export default function Modaldetails({ openmodal, onPress, title, owner, image, 
 
   return (
     <React.Fragment>
-
-
-
+      {/* Abre el modal con los detalles para cada card */}
       <Modal open={!!open} onClose={() => {
         setOpen('')
         onPress('')
@@ -50,13 +47,13 @@ export default function Modaldetails({ openmodal, onPress, title, owner, image, 
           aria-describedby="layout-modal-description"
           layout={open || undefined}
         >
-            <ModalClose sx={{ background: '#74B9FF', borderRadius: 50, color: '#ffff', top: 20, right: 20 }} />
-              <Typography id="layout-modal-title" component="h2" sx={{ fontSize: 24, fontWeight: 600, marginBottom: 0.5 }}>
-                {title}
-              </Typography>
-              <Typography id="layout-modal-description" textColor="text.tertiary" sx={{ fontSize: 18, fontWeight: 400 }}>
-                {owner}
-              </Typography>
+          <ModalClose sx={{ background: '#74B9FF', borderRadius: 50, color: '#ffff', top: 20, right: 20 }} />
+          <Typography id="layout-modal-title" component="h2" sx={{ fontSize: 24, fontWeight: 600, marginBottom: 0.5 }}>
+            {title}
+          </Typography>
+          <Typography id="layout-modal-description" textColor="text.tertiary" sx={{ fontSize: 18, fontWeight: 400 }}>
+            {owner}
+          </Typography>
 
 
           <Box sx={{
@@ -66,6 +63,7 @@ export default function Modaldetails({ openmodal, onPress, title, owner, image, 
             px: 'var(--ModalDialog-padding)',
           }}>
             <Box className="content-cards" sx={{ mb: 3.5, borderColor: 'red' }}>
+              {/* Mapeo del objeto de las imagenes */}
               {
                 data.map((e: any) => (
                   <AspectRatio key={e} sx={{ borderRadius: 0, marginBottom: 3, cursor: 'pointer' }} onClick={() => setToggler(!toggler)}>
@@ -103,6 +101,7 @@ export default function Modaldetails({ openmodal, onPress, title, owner, image, 
               </IconButton>
             </Box>
             <Box style={{ display: 'flex', overflow: 'scroll', marginTop: 100 }}>
+              {/* Componente de card reutilizable para mostrarse como proyecto sugeridos dentro de cada detalle de card */}
               {
                 cardsInfo.map((card: { owner: any; title: any; image: any; like: any; view: any; ultimosAgregados: any, dateRelease: any }) => (
                   <Box key={card.title} className="content-cards" sx={{ mb: 3.5, borderColor: 'red' }}>
@@ -119,6 +118,7 @@ export default function Modaldetails({ openmodal, onPress, title, owner, image, 
                       spaceColum={4}
                       fontOwner={'16px'}
                       fontTitle={'14px'}
+                      componentName={'Modal'}
                     />
                   </Box>
                 ))

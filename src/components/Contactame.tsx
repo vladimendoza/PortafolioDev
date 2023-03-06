@@ -6,26 +6,26 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox'
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
+import styles from '../styles/dashboard.module.css'
+
 
 
 // import TextareaAutosize from '@mui/base/TextareaAutosize';
-
-
 export default function Contactame() {
   const [name, setName] = useState('');
   const [message, setMessage] = useState('');
   const [estado, setEstado] = useState(false);
-  const [error, setError] = useState(false);
+  // const [error, setError] = useState(false);
 
   function validateInputs() {
 
     if (name.length > 0 && message.length > 0) {
       setEstado(true)
     }
-    else {
-      console.log('hay un error')
-      setError(false)
-    }
+    // else {
+    //   console.log('hay un error')
+    //   setError(false)
+    // }
   }
 
   return (
@@ -73,21 +73,21 @@ export default function Contactame() {
               </Typography>
               <Grid container rowSpacing={1} columnSpacing={{ xs: 12, sm: 12, md: 12 }}>
                 <Grid item xs={6}>
-                  <FormControlLabel value="end" control={<Checkbox />} label="Diseño NFT" labelPlacement="end" />
-                  <FormControlLabel value="end" control={<Checkbox />} label="Diseño Web" labelPlacement="end" />
-                  <FormControlLabel value="end" control={<Checkbox />} label="Diseño Móvil" labelPlacement="end" />
-                  <FormControlLabel value="end" control={<Checkbox />} label="Diseño Gráfico" labelPlacement="end" />
-                  <FormControlLabel value="end" control={<Checkbox />} label="Marca y Logotipo" labelPlacement="end" />
-                  <FormControlLabel value="end" control={<Checkbox />} label="Diseño de plantillas CMS" labelPlacement="end" />
+                  <FormControlLabel sx={{'& .css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root.Mui-checked': {color: '#74B9FF', borderRadius: 50}}} value="end" control={<Checkbox />} label="Diseño NFT" labelPlacement="end" />
+                  <FormControlLabel sx={{'& .css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root.Mui-checked': {color: '#74B9FF', borderRadius: 50}}} value="end" control={<Checkbox />} label="Diseño Web" labelPlacement="end" />
+                  <FormControlLabel sx={{'& .css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root.Mui-checked': {color: '#74B9FF', borderRadius: 50}}} value="end" control={<Checkbox />} label="Diseño Móvil" labelPlacement="end" />
+                  <FormControlLabel sx={{'& .css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root.Mui-checked': {color: '#74B9FF', borderRadius: 50}}} value="end" control={<Checkbox />} label="Diseño Gráfico" labelPlacement="end" />
+                  <FormControlLabel sx={{'& .css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root.Mui-checked': {color: '#74B9FF', borderRadius: 50}}} value="end" control={<Checkbox />} label="Marca y Logotipo" labelPlacement="end" />
+                  <FormControlLabel sx={{'& .css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root.Mui-checked': {color: '#74B9FF', borderRadius: 50}}} value="end" control={<Checkbox />} label="Diseño de plantillas CMS" labelPlacement="end" />
 
                 </Grid>
                 <Grid item xs={6}>
-                  <FormControlLabel value="end" control={<Checkbox />} label="Diseño UI" labelPlacement="end" />
-                  <FormControlLabel value="end" control={<Checkbox />} label="Diseño UX" labelPlacement="end" />
-                  <FormControlLabel value="end" control={<Checkbox />} label="WordPress" labelPlacement="end" />
-                  <FormControlLabel value="end" control={<Checkbox />} label="Animación 3D" labelPlacement="end" />
-                  <FormControlLabel value="end" control={<Checkbox />} label="Animación 2D" labelPlacement="end" />
-                  <FormControlLabel value="end" control={<Checkbox />} label="Otro" labelPlacement="end" />
+                  <FormControlLabel sx={{'& .css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root.Mui-checked': {color: '#74B9FF', borderRadius: 50}}} value="end" control={<Checkbox />} label="Diseño UI" labelPlacement="end" />
+                  <FormControlLabel sx={{'& .css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root.Mui-checked': {color: '#74B9FF', borderRadius: 50}}} value="end" control={<Checkbox />} label="Diseño UX" labelPlacement="end" />
+                  <FormControlLabel sx={{'& .css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root.Mui-checked': {color: '#74B9FF', borderRadius: 50}}} value="end" control={<Checkbox />} label="WordPress" labelPlacement="end" />
+                  <FormControlLabel sx={{'& .css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root.Mui-checked': {color: '#74B9FF', borderRadius: 50}}} value="end" control={<Checkbox />} label="Animación 3D" labelPlacement="end" />
+                  <FormControlLabel sx={{'& .css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root.Mui-checked': {color: '#74B9FF', borderRadius: 50}}} value="end" control={<Checkbox />} label="Animación 2D" labelPlacement="end" />
+                  <FormControlLabel sx={{'& .css-12wnr2w-MuiButtonBase-root-MuiCheckbox-root.Mui-checked': {color: '#74B9FF', borderRadius: 50}}} value="end" control={<Checkbox />} label="Otro" labelPlacement="end" />
 
                 </Grid>
               </Grid>
