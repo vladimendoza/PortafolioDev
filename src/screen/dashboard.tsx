@@ -24,7 +24,7 @@ export const Dashboard = () => {
       setData(result)
     } else if (e === 'Más vistos') {
       const result  = cardsInfo.filter((e: any) => {
-        return e.view > 1000
+        return e.view > 700
       })
       setData(result)
     } else {
@@ -45,12 +45,12 @@ export const Dashboard = () => {
           {/* LLama al componente Navbar */}
           <Navbar />
 
-          <Grid container columns={{ xs: 4, sm: 0, md: 12 }} style={{ background: 'none' }}
+          <Grid container columns={{ xs: 12, sm: 12, md: 12 }}
             direction="row"
             justifyContent="space-between"
             alignItems="center">
             {
-              data.map((card: { owner: any; title: any; image: any; like: any; view: any; ultimosAgregados: any }) => (
+              data.map((card: { owner: any; title: any; image: any; like: any; view: any; ultimosAgregados: any, dateRelease:any }) => (
                 <Box key={card.title} className="content-cards" sx={{ mb: 3.5, borderColor: 'red' }}>
                   <CardComponent
                     title={card.title}
@@ -59,6 +59,12 @@ export const Dashboard = () => {
                     like={card.like}
                     view={card.view}
                     ultimosAgregados={card.ultimosAgregados}
+                    dateRelease={card.dateRelease}
+                    width={680}
+                    aspectRadio={'4/5'}
+                    spaceColum={0}
+                    fontOwner={'22px'}
+                    fontTitle={'18px'}
                   />
                 </Box>
               ))

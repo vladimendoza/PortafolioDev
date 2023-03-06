@@ -20,11 +20,16 @@
     "@types/react-dom": "18.0.11",
     "eslint": "8.34.0",
     "eslint-config-next": "13.2.0",
+    "fslightbox-react": "^1.7.2",
+    "moment": "^2.29.4",
     "next": "13.2.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-segmented-control": "^0.2.2",
     "styled-components": "^5.3.6",
     "typescript": "4.9.5"
+  },
+  "devDependencies": {
+    "@types/fslightbox-react": "^1.7.0"
   }
 }

@@ -8,14 +8,11 @@ export const FilterCards = ({ name, segments, callback, defaultIndex = 0, contro
 
     const [activeIndex, setActiveIndex] = useState(defaultIndex);
     const componentReady = useRef();
-    // console.log('Tabs Activada:', componentReady.current);
 
 
     // Determine when the component is "ready"
     useEffect(() => {
-        // componentReady.current = true;
         componentReady.current;
-       
     }, [componentReady]);
    
 

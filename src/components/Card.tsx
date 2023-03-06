@@ -1,61 +1,79 @@
 import React, { useEffect, useState } from 'react'
-// import Card from '@mui/material/Card';
-// import CardContent from '@mui/material/CardContent';
-// import CardMedia from '@mui/material/CardMedia';
-// import Typography from '@mui/material/Typography';
-// import { Box, Button, CardActionArea, CardActions } from '@mui/material';
-import Grid from '@mui/material/Grid'; // Grid version 1
-import Icon from '@mui/material/Icon';
+import styles from '../styles/card.module.css'
 import ThumbUpAltIcon from '@mui/icons-material/ThumbUpAlt';
-
 import AspectRatio from '@mui/joy/AspectRatio';
 import Box from '@mui/joy/Box';
 import Card from '@mui/joy/Card';
 import CardCover from '@mui/joy/CardCover';
-// import Chip from '@mui/joy/Chip';
 import IconButton from '@mui/joy/IconButton';
 import Typography from '@mui/joy/Typography';
 import Link from '@mui/joy/Link';
 import Visibility from '@mui/icons-material/Visibility';
-import { Button } from '@mui/joy';
 import Modaldetails from './Modaldetails';
 
 
-export default function CardComponent({ title, owner, image, like, view, ultimosAgregados }: any) {
+interface propsCards {
+  title?: string,
+  owner?: string,
+  image?: any,
+  like?: string,
+  view?: string,
+  ultimosAgregados?: boolean,
+  dateRelease?: any,
+  width?: number,
+  aspectRadio?: string
+  spaceColum?: number,
+  fontOwner?: string,
+  fontTitle?: string
+}
+
+export default function CardComponent({
+  title,
+  owner,
+  image,
+  like,
+  view,
+  ultimosAgregados,
+  dateRelease,
+  width,
+  aspectRadio,
+  spaceColum,
+  fontOwner,
+  fontTitle }: propsCards) {
+
 
   const [open, setOpen] = useState('');
-  // const [images, setImages] = useState([]);
-  
-
-
   return (
 
     <Box>
 
+
       {
         open === 'fullscreen' ?
-          <Modaldetails 
-          openmodal={open} 
-          onPress={(value:any) => setOpen(value)}
-          title={title}
-          owner={owner}
-          image={image}
-          like={like}
-          view={view}
-          ultimosAgregados={ultimosAgregados}
+          <Modaldetails
+            openmodal={open}
+            onPress={(value: any) => setOpen(value)}
+            title={title}
+            owner={owner}
+            image={image}
+            like={like}
+            view={view}
+            ultimosAgregados={ultimosAgregados}
+            dateRelease={dateRelease}
           />
           :
           null
       }
       <Card
         sx={{
-          width: 680,
+          width: { width },
           bgcolor: 'initial',
           boxShadow: 'none',
           '--Card-padding': '0px',
-          borderColor: 'black'
+          marginRight: spaceColum
         }}
         onClick={() => { setOpen('fullscreen') }}
+        className={styles.fadeInUp}
       >
         <Box sx={{ position: 'relative' }} >
           {ultimosAgregados === true ?
@@ -77,7 +95,7 @@ export default function CardComponent({ title, owner, image, like, view, ultimos
             :
             null
           }
-          <AspectRatio ratio="4/5" sx={{ borderRadius: 45 }}>
+          <AspectRatio ratio={aspectRadio} sx={{ borderRadius: 45, border: '1px solid #EFEFEF' }}>
             <figure>
               <img
                 src={image.img01}
@@ -123,13 +141,22 @@ export default function CardComponent({ title, owner, image, like, view, ultimos
                       textOverflow: 'ellipsis',
                       overflow: 'hidden',
                       display: 'block',
+                      fontSize: fontOwner,
+                      fontWeight: 600
                     }}
                   >
                     {title}
                   </Link>
-                  <Link sx={{
-                    color: '#fff', textOverflow: 'ellipsis', overflow: 'hidden', display: 'block',
-                  }}>{owner}</Link>
+                  <Link
+                    overlay
+                    underline="none"
+                    sx={{
+                      color: '#fff',
+                      textOverflow: 'ellipsis',
+                      overflow: 'hidden',
+                      display: 'block',
+                      fontSize: fontTitle
+                    }}>{owner}</Link>
                 </Typography>
               </Box>
 
@@ -143,7 +170,7 @@ export default function CardComponent({ title, owner, image, like, view, ultimos
                   alignSelf: 'flex-end',
                 }}
               >
-                <IconButton size="sm" sx={{ ml: 'auto', color: 'white', mr: 1 }}>
+                <IconButton size='sm' sx={{ ml: 'auto', color: 'white', mr: 1 }}>
                   {/* <CreateNewFolder /> */}
                   <ThumbUpAltIcon sx={{ mr: 1 }} />
                   <Typography level="body2" >

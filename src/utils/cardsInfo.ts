@@ -1,6 +1,7 @@
+import moment from 'moment';
 export const cardsInfo:any = [
     {
-        title: "Polaris - Dashboard App",
+        title: "Polaris Dashboard",
         owner: 'Vladimir Mendoza',
         image: 
             {
@@ -12,6 +13,7 @@ export const cardsInfo:any = [
         like: 150,
         view: 890,
         ultimosAgregados: true,
+        dateRelease: `${moment().format('Do')} de ${moment(new Date()).format('MMMM')} ${moment().format('YYYY')}`,
     },
 
     {
@@ -25,6 +27,8 @@ export const cardsInfo:any = [
         like: 824,
         view: 335,
         ultimosAgregados: false,
+        dateRelease: `${moment().format('Do')} de ${moment(new Date()).format('MMMM')} ${moment().format('YYYY')}`,
+
     },
     {
         title: "Madri's Closet",
@@ -40,6 +44,8 @@ export const cardsInfo:any = [
         like: 356,
         view: 1124,
         ultimosAgregados: false,
+        dateRelease: `${moment().format('Do')} de ${moment(new Date()).format('MMMM')} ${moment().format('YYYY')}`,
+
     },
     {
         title: "QorBaby Project",
@@ -54,6 +60,8 @@ export const cardsInfo:any = [
         like: 567,
         view: 764,
         ultimosAgregados: true,
+        dateRelease: `${moment().format('Do')} de ${moment(new Date()).format('MMMM')} ${moment().format('YYYY')}`,
+
     },
     {
         title: "Roger Tich",
@@ -69,6 +77,8 @@ export const cardsInfo:any = [
         like: 902,
         view: 237,
         ultimosAgregados: true,
+        dateRelease: `${moment().format('Do')} de ${moment(new Date()).format('MMMM')} ${moment().format('YYYY')}`,
+
     },
     {
         title: "KidLink App",
@@ -80,6 +90,8 @@ export const cardsInfo:any = [
         like: 678,
         view: 829,
         ultimosAgregados: false,
+        dateRelease: `${moment().format('Do')} de ${moment(new Date()).format('MMMM')} ${moment().format('YYYY')}`,
+
     },
     {
         title: "Kristen Edmons",
@@ -94,6 +106,8 @@ export const cardsInfo:any = [
         like: 632,
         view: 458,
         ultimosAgregados: true,
+        dateRelease: `${moment().format('Do')} de ${moment(new Date()).format('MMMM')} ${moment().format('YYYY')}`,
+
     },
     {
         title: "Locomex Project",
@@ -108,6 +122,8 @@ export const cardsInfo:any = [
         like: 844,
         view: 1125,
         ultimosAgregados: false,
+        dateRelease: `${moment().format('Do')} de ${moment(new Date()).format('MMMM')} ${moment().format('YYYY')}`,
+
     },
     {
         title: "Sidebar Model",
@@ -122,6 +138,8 @@ export const cardsInfo:any = [
         like: 888,
         view: 900,
         ultimosAgregados: false,
+        dateRelease: `${moment().format('Do')} de ${moment(new Date()).format('MMMM')} ${moment().format('YYYY')}`,
+
     },
     {
         title: "E-learning App",
@@ -138,6 +156,8 @@ export const cardsInfo:any = [
         like: 112,
         view: 478,
         ultimosAgregados: true,
+        dateRelease: `${moment().format('Do')} de ${moment(new Date()).format('MMMM')} ${moment().format('YYYY')}`,
+
     },
     {
         title: "LoveLink App",
@@ -151,7 +171,7 @@ export const cardsInfo:any = [
         ultimosAgregados: false,
     },
     {
-        title: "Tabbar Microinteractions",
+        title: "TabBar Interactions",
         owner: 'Vladimir Mendoza',
         image: 
             {
@@ -160,5 +180,7 @@ export const cardsInfo:any = [
         like: 390,
         view: 290,
         ultimosAgregados: true,
+        dateRelease: `${moment().format('Do')} de ${moment(new Date()).format('MMMM')} ${moment().format('YYYY')}`,
+
     },
 ]

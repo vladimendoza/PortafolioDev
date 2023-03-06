@@ -57,46 +57,48 @@ export default function TabSet() {
     <Box sx={{ width: 600 }}>
 
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-        <Tabs  value={value} onChange={handleChange} aria-label="basic tabs example" variant="fullWidth">
+        <Tabs value={value} onChange={handleChange} aria-label="basic tabs example" variant="fullWidth">
           <Tab label="Sobre mí" {...a11yProps(0)} style={{ textTransform: 'capitalize', fontSize: 16 }} />
           <Tab label="Servicios" {...a11yProps(1)} style={{ textTransform: 'capitalize', fontSize: 16 }} />
           <Tab label="Contáctame" {...a11yProps(2)} style={{ textTransform: 'capitalize', fontSize: 16 }} />
         </Tabs>
       </Box>
 
-      <TabPanel value={value} index={0}>
-        <Aboutme />
-      </TabPanel>
+      <Box sx={{overflow: 'scroll'}}>
+        <TabPanel value={value} index={0}>
+          <Aboutme />
+        </TabPanel>
 
-      <TabPanel value={value} index={1}>
-        <Servicios />
-      </TabPanel>
+        <TabPanel value={value} index={1}>
+          <Servicios />
+        </TabPanel>
 
-      <TabPanel value={value} index={2}>
-        <Contactame />
-      </TabPanel>
+        <TabPanel value={value} index={2}>
+          <Contactame />
+        </TabPanel>
+      </Box>
+
 
       <Box>
-        <div style={{
-          width: '100%',
+        <Box style={{
+          width: '-webkit-fill-available',
           height: 35,
-          // background: 'red',
-          position: 'absolute',
-          right: 0,
-          left: 0,
-          bottom: 0,
           display: 'flex',
           alignItems: 'center',
-          // borderTop: '1px solid red'
+          background: 'white',
+          position: 'fixed',
+          bottom: 0,
+          boxShadow: '0 0 5px rgba(0, 0, 0, 0.05)'
         }}>
           <Box sx={{ width: '100%', display: 'flex', justifyContent: 'space-around' }}>
             <LinkedInIcon style={{ color: '#A6A6A6' }} />
             <InstagramIcon style={{ color: '#A6A6A6' }} />
             <TwitterIcon style={{ color: '#A6A6A6' }} />
-           
+            <FacebookIcon style={{ color: '#A6A6A6' }} />
+            <YouTubeIcon style={{ color: '#A6A6A6' }} />
             <PinterestIcon style={{ color: '#A6A6A6' }} />
           </Box>
-        </div>
+        </Box>
       </Box>
     </Box>
   );
