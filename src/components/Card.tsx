@@ -166,22 +166,18 @@ export default function CardComponent({
                   p: 4,
                   display: 'flex',
                   alignItems: 'center',
-                  // gap: 1.5,
-                  // flexGrow: 1,
                   alignSelf: 'flex-end',
                 }}
               >
-                <IconButton size='sm' sx={{ ml: 'auto', color: 'white', mr: 1 }}>
-                  {/* <CreateNewFolder /> */}
+                <IconButton size='sm' sx={{ ml: 'auto', color: 'white', mr: 1, background: 'none' }}>
                   <ThumbUpAltIcon sx={{ mr: 1 }} />
-                  <Typography level="body2" >
+                  <Typography level="body2" sx={{color: '#fff'}}>
                     {like}
                   </Typography>
                 </IconButton>
-                <IconButton size="sm" sx={{ ml: 'auto', color: 'white' }}>
-                  {/* <Favorite /> */}
+                <IconButton size="sm" sx={{ ml: 'auto', color: 'white', background: 'none' }}>
                   <Visibility sx={{ mr: 1 }} />
-                  <Typography level="body2">
+                  <Typography level="body2" sx={{color: '#fff'}}>
                     {view}
                   </Typography>
                 </IconButton>

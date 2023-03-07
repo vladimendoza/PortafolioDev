@@ -33,7 +33,6 @@ export const Index = () => {
           loop
           muted
           style={{ width: 'auto', height: '100vh' }}
-        // poster="https://assets.codepen.io/6093409/river.jpg"
         >
           <source
             src="../../videos/videointro.mp4"

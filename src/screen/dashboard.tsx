@@ -11,7 +11,6 @@ import { FilterCards } from '@/components/Filter';
 import Footer from '@/components/Footer';
 
 // Seccion principal
-
 export const Dashboard = () => {
   const [selectedValue1, setSelectedValue1] = useState("complete");
   const [data, setData] = useState([])
@@ -56,7 +55,7 @@ export const Dashboard = () => {
             {
               data.map((card: { owner: any; title: any; image: any; like: any; view: any; ultimosAgregados: any, dateRelease: any }) => (
                 <Grid key={card.title} item xs={12} sm={6} md={6} >
-                  <Box key={card.title} className="content-cards" sx={{ mb: 3.5}} >
+                  <Box key={card.title} className="content-cards" sx={{ mb: 0}} >
                     <CardComponent
                       title={card.title}
                       owner={card.owner}

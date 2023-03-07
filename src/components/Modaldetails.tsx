@@ -87,15 +87,15 @@ export default function Modaldetails({ openmodal, onPress, title, owner, image, 
               <Typography level="h5" component="h2" sx={{ fontSize: 22, color: '#A6A6A6', margin: 1 }}>
                 Publicado el: {dateRelease}
               </Typography>
-              <IconButton size='sm' sx={{ ml: 'auto', color: '#2D3436', mr: 1 }}>
+              <IconButton size='sm' sx={{ ml: 'auto', color: '#2D3436', mr: 1, background: 'none' }}>
                 <ThumbUpAltIcon sx={{ mr: 1 }} />
-                <Typography level="body2" fontSize={18} >
+                <Typography level="body2" fontSize={18} sx={{color: '#2D3436'}} >
                   {like}
                 </Typography>
               </IconButton>
-              <IconButton size="sm" sx={{ ml: 'auto', color: '#2D3436' }}>
+              <IconButton size="sm" sx={{ ml: 'auto', color: '#2D3436', background: 'none' }}>
                 <Visibility sx={{ mr: 1 }} />
-                <Typography level="body2" fontSize={18}>
+                <Typography level="body2" fontSize={18} sx={{color: '#2D3436'}}>
                   {view}
                 </Typography>
               </IconButton>

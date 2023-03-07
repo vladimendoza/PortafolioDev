@@ -92,6 +92,7 @@ export default function TabSet() {
           bottom: 0,
           boxShadow: '0 0 5px rgba(0, 0, 0, 0.05)'
         }}>
+           {/* Iconos sociales */}
           <Box sx={{ width: '100%', display: 'flex', justifyContent: 'space-around' }}>
             <LinkedInIcon style={{ color: '#A6A6A6' }} />
             <InstagramIcon style={{ color: '#A6A6A6' }} />

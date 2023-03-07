@@ -24,6 +24,7 @@ export const FilterCards = ({ name, segments, callback, defaultIndex = 0, contro
         style.setProperty("--highlight-x-pos", `${offsetLeft}px`);
     }, [activeIndex, callback, controlRef, segments]);
 
+    // Funcion para activar cada categoria del filtro, segun la que este activa asi se mapean el objeto de cards
     const onInputChange = (value: any, index: any) => {
         setActiveIndex(index);
         handleCards(value)
@@ -32,6 +33,7 @@ export const FilterCards = ({ name, segments, callback, defaultIndex = 0, contro
     console.log('seleccionado:', componentReady.current);
 
     return (
+        // Maquetacion del filtro estatico
         <div className={styles.filterCards}>
             <div className={styles.controlsContainer} ref={controlRef}>
                 <div className={`${styles.controls} ${componentReady.current ? `${styles.ready}` : "idle"}`}>
