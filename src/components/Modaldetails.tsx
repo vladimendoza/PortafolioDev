@@ -58,7 +58,7 @@ export default function Modaldetails({ openmodal, onPress, title, owner, image, 
 
           <Box sx={{
             width: 'auto', height: '100vh', background: 'none',
-            overflow: scroll ? 'scroll' : 'initial',
+            overflow: 'scroll',
             mx: 'calc(-1 * var(--ModalDialog-padding))',
             px: 'var(--ModalDialog-padding)',
           }}>

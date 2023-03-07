@@ -55,7 +55,7 @@ export const Dashboard = () => {
             {/* Mapea el objeto de todas las cards y las envie al componente Cards */}
             {
               data.map((card: { owner: any; title: any; image: any; like: any; view: any; ultimosAgregados: any, dateRelease: any }) => (
-                <Grid item xs={12} sm={6} md={6} >
+                <Grid key={card.title} item xs={12} sm={6} md={6} >
                   <Box key={card.title} className="content-cards" sx={{ mb: 3.5}} >
                     <CardComponent
                       title={card.title}
